@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём рождения, Чайка Виктория Юрьевна!</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff9ecb,#ffd6ec,#fff6b7);
+    overflow:hidden;
+    color:white;
+}
+
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:45px;
+    max-width:800px;
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:20px;
+    animation: glow 2s infinite alternate;
+}
+
+h2{
+    font-size:34px;
+    margin-bottom:25px;
+}
+
+p{
+    font-size:22px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:20px;
+    background:#ff4081;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff1f6d;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px white;}
+    to{text-shadow:0 0 25px gold,0 0 40px white;}
+}
+
+.heart{
+    position:absolute;
+    color:#fff;
+    font-size:25px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-10vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>🎉 С Днём рождения! 🎉</h1>
+
+<h2>Чайка Виктория Юрьевна</h2>
+
+<p>
+Пусть каждый день приносит радость, вдохновение и улыбки!<br><br>
+
+Желаем крепкого здоровья, счастья, семейного тепла,
+исполнения самых заветных желаний, благополучия,
+ярких впечатлений и огромной удачи во всех начинаниях.
+<br><br>
+
+Пусть рядом всегда будут любимые люди,
+в сердце живёт гармония,
+а каждый новый день открывает новые возможности!
+</p>
+
+<button onclick="congrats()">🎁 Открыть поздравление</button>
+
+</div>
+</div>
+
+<script>
+function congrats(){
+    window.location.href = "Viktoria2.html";
+}
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML=["💖","💕","💗","🌸","✨","🎈"][Math.floor(Math.random()*6)];
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*30)+"px";
+    heart.style.animationDuration=(4+Math.random()*5)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
